@@ -5,6 +5,7 @@ import threading
 root = Tk()
 root.title("Library Management System")
 root.geometry("360x460")
+root.resizable(False,False)
 Lib = Label(text="Library Management System")
 try:
     with open("Database.txt","r") as h:
