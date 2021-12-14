@@ -55,8 +55,8 @@ def export():
         exec(e.read())
     d= []
     for i in l1:
-        d.append(i)
         d.append(l3[i])
+        d.append(",".join(i.split("_")))
         d.append(l1[i])
         d.append(l2[i])
         d.append(" ")
@@ -64,7 +64,7 @@ def export():
     str = str.split(" ,")
     str = "\n".join(str)
     with open("Database.csv","w") as f:
-        f.writelines("Class_Sec_Roll,Name,Issue Date,Return Date,\n")
+        f.writelines("Name,Class,Sec,Roll,Issue Date,Return Date,\n")
         f.writelines(str)
     t = threading.Thread(target=lambda:system("Database.csv"))
     t.start()
