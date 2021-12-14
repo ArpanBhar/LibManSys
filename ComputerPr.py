@@ -1,5 +1,7 @@
 from tkinter import *
 from datetime import *
+from os import system
+import threading
 root = Tk()
 root.title("Library Management System")
 root.geometry("360x460")
@@ -64,6 +66,8 @@ def export():
     with open("Database.csv","w") as f:
         f.writelines("Class_Sec_Roll,Name,Issue Date,Return Date,\n")
         f.writelines(str)
+    t = threading.Thread(target=lambda:system("Database.csv"))
+    t.start()
 # Labels and Buttons assignment
 namelabel = Label(text="Name of the student: ")
 nament = Entry(root,width=25)
