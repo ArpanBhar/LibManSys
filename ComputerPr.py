@@ -54,8 +54,8 @@ def export():
     with open("Database.txt","r") as e:
         exec(e.read())
     d= []
-    for e,i in enumerate(l1):
-        d.append(f"{(e+1)}")
+    for e,i in enumerate(l1,1):
+        d.append(f"{(e)}")
         d.append(l3[i])
         d.append(",".join(i.split("_")))
         d.append(l1[i])
