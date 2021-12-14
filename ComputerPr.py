@@ -54,7 +54,8 @@ def export():
     with open("Database.txt","r") as e:
         exec(e.read())
     d= []
-    for i in l1:
+    for e,i in enumerate(l1):
+        d.append(f"{(e+1)}")
         d.append(l3[i])
         d.append(",".join(i.split("_")))
         d.append(l1[i])
@@ -64,7 +65,7 @@ def export():
     str = str.split(" ,")
     str = "\n".join(str)
     with open("Database.csv","w") as f:
-        f.writelines("Name,Class,Sec,Roll,Issue Date,Return Date,\n")
+        f.writelines("Serial No.,Name,Class,Sec,Roll,Issue Date,Return Date,\n")
         f.writelines(str)
     t = threading.Thread(target=lambda:system("Database.csv"))
     t.start()
