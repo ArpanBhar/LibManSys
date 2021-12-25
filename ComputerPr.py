@@ -2,7 +2,7 @@ from tkinter import *
 from datetime import *
 from os import system,chdir
 import threading
-directory = __file__.split("\\");directory.remove("ComputerPr.py");chdir("\\".join(directory))
+chdir("\\".join(__file__.split("\\")[0:-1]))
 root = Tk()
 root.title("Library Management System")
 root.geometry("360x480")
