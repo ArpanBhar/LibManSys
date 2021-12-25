@@ -38,8 +38,6 @@ def isdatelook():
     with open("Database.txt","w") as x:
         x.writelines(f"l1 = {l1}\nl2 = {l2}\nl3 = {l3}\nl4 = {l4}")
 def lookup():
-    with open("Database.txt","r") as e:
-        exec(e.read())
         issuedategive = Label(text=l1[entidbox.get()])
         issuedategive.place(x=80,y=410)
         returndategive = Label(text=l2[entidbox.get()])
@@ -56,8 +54,6 @@ def lookup():
             datelabel = Label(text="Nil")
         datelabel.place(x=60,y=440)
 def export():
-    with open("Database.txt","r") as e:
-        exec(e.read())
     d= []
     for e,i in enumerate(l1,1):
         d.append(f"{(e)}")
